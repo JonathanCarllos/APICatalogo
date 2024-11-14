@@ -30,6 +30,13 @@ builder.Services.AddAuthentication("Bearer").AddJwtBearer();
 
 string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConnection");
 
+var secretKey = builder.Configuration["JWT:SecretKey"] ?? throw new ArgumentException("Invalid secret key");
+
+builder.Services.AddAuthentication(options =>
+    options.DefaultAuthenticateScheme = 
+
+);
+
 builder.Services.AddDbContext<AppDbContext>(options =>
                     options.UseMySql(mySqlConnection,
                     ServerVersion.AutoDetect(mySqlConnection)));
