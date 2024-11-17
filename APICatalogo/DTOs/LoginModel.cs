@@ -1,14 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace APICatalogo.DTOs
+namespace APICatalogo.DTOs;
+
+public class LoginModel
 {
-    public class LoginModel
-    {
-        [Required(ErrorMessage ="Campo Obrigatório")]
-        public string? UserName { get; set; }
+    [Required(ErrorMessage ="User name is required")]
+    public string? UserName { get; set; }
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
-        public string? Password { get; set; }
-
-    }
+    [Required(ErrorMessage = "Password is required")]
+    public string? Password { get; set; }
 }

@@ -25,8 +25,8 @@ public class CategoriasController : ControllerBase
         _uof = uof;
     }
 
-    [HttpGet]
     [Authorize]
+    [HttpGet]
     public async Task<ActionResult<IEnumerable<CategoriaDTO>>> Get()
     {
         var categorias = await _uof.CategoriaRepository.GetAllAsync();

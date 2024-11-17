@@ -1,18 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace APICatalogo.DTOs
+namespace APICatalogo.DTOs;
+
+public class RegisterModel
 {
-    public class RegisterModel
-    {
-        [Required(ErrorMessage = "Campo Obrigatório")]
-        public string? UserName { get; set; }
+    [Required(ErrorMessage = "User Name is required")]
+    public string? Username { get; set; }
 
-        [EmailAddress]
-        [Required(ErrorMessage = "Campo Obrigatório")]
-        public string? Email { get; set; }
+    [EmailAddress]
+    [Required(ErrorMessage = "Email is required")]
+    public string? Email { get; set; }
 
-        [Required(ErrorMessage = "Campo Obrigatório")]
-        public string? Password { get; set; }
-    }
-
+    [Required(ErrorMessage = "Password is required")]
+    public string? Password { get; set; }
 }
